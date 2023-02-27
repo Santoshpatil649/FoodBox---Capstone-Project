@@ -1,0 +1,38 @@
+<div><h2>Order Details</h2></div>
+
+<div class="container">
+  <!-- Row 1 -->
+  <div class="row">
+    <div>Order Item Count: {{order.totalQuantity}}</div>
+    <div>Order Price: {{order.totalPrice| currency:"INR"}}</div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="row">
+    <ul>
+      <li *ngFor="let order of order.items">
+        <div>
+          <img [src]="order.product.productImageUrl" [alt]="order.product.productName">
+        </div>
+        <div>
+            {{order.product.productName}}
+        </div>
+        <div>
+          {{order.quantity}}
+        </div>
+        <div>
+          {{order.price | currency:"INR"}}
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="row">
+      <button routerLink="/order-confirmation">
+        Go To Payment
+      </button>
+  </div>
+</div> <!-- container -->
+
+

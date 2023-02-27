@@ -1,0 +1,96 @@
+<h2>Product Update Form</h2>>
+<div *ngIf="message" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong>Password Reset Successfully
+    <button (click)="removeMessage()" type="button" data-bs-dismiss="alert" aria-label="Close">X</button>
+</div>
+<div class="container">
+    <form [formGroup]="updateProductForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label>Product Name</label>
+            <input type="text"
+            formControlName="productName"
+            class="form-control"
+            [(ngModel)] = "tempProduct.productName"
+            [ngClass]="{'is-invalid':submitted && form['productName'].errors}">
+            <!-- Define Validator Message-->
+            <div *ngIf="submitted && form['productName'].errors" class="invalid-feedback">
+              <div *ngIf="form['productName'].errors['required']">
+                  Product Name cannot be Empty
+              </div>
+            </div> <!-- validator msg-->
+          </div> <!-- product name form group-->
+
+          <div class="form-group">
+            <div class="input-group mb-3">
+              <label>$</label>
+              <input type="number"
+              formControlName="price"
+              class="form-control"
+              [(ngModel)] = "tempProduct.price"
+              [ngClass]="{'is-invalid':submitted && form['price'].errors}">
+              <!-- Define Validator Message-->
+              <div *ngIf="submitted && form['price'].errors" class="invalid-feedback">
+                <div *ngIf="form['price'].errors['required']">
+                    Product Price cannot be Empty
+                </div>
+              </div>
+            </div>
+          </div> <!-- product price form group-->
+
+          <div class="form-group">
+            <label>Calories</label>
+            <input type="number"
+            formControlName="calories"
+            class="form-control"
+            [(ngModel)] = "tempProduct.calories">
+          </div> <!-- calories name form group-->
+
+          <div class="form-group">
+            <label>Product Rating</label>
+             <input type="number"
+              formControlName="rating"
+              class="form-control"
+              [(ngModel)] = "tempProduct.rating"
+              [ngClass]="{'is-invalid':submitted && form['rating'].errors}">
+              <!-- Define Validator Message-->
+              <div *ngIf="submitted && form['rating'].errors" class="invalid-feedback">
+                    Product Rating must be between 0-5
+              </div>
+          </div> <!-- product rating form group-->
+
+          <div class="form-group">
+              <label>Number of Customer Reviews</label>
+              <input type="number"
+              formControlName="numOfReviews"
+              class="form-control"
+              [(ngModel)] = "tempProduct.numOfReviews">
+          </div> <!-- number of customer reviews form group-->
+
+          <div class="form-group">
+              <label>Product Description</label>
+              <input type="text"
+              formControlName="description"
+              class="form-control"
+              [(ngModel)] = "tempProduct.description">
+          </div> <!-- product description form group-->
+
+          <div class="form-group">
+            <label>Base Name of Image File</label>
+            <p>In this version of the application, you have to upload the image to the src/assets/images folder. This is NOT an file upload function. </p>
+            <input type="text"
+            formControlName="productImageUrl"
+            class="form-control"
+            [(ngModel)] = "tempProduct.productImageUrl">
+          </div> <!-- image name form group-->
+
+        <!--Adding buttons to submit the form or go back to Homepage-->
+        <div class="form-group">
+            <button class="button btn" type="submit">Update Product</button>
+        </div> <!-- button formgroup-->
+    </form><!-- end form-->
+</div><!-- end container-->
+<div>
+    <button class="button btn" routerLink="/editProducts">Return to Product List</button>
+    <button class="button btn" routerLink="/home">Return to Homepage</button>
+</div> <!-- end button div-->
+

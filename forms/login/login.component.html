@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <!-- Col 1 -->
+    <div class="welcome col-md-6">
+        <h2>Welcome to FoodBox!!</h2>
+        <p>We now offer online shopping for meals of different cuisines at affordable prices on our website.</p>
+        <br>
+        <h3>Cuisines Offered</h3>
+            <ul *ngFor="let cuisine of cuisines">
+                <ng-container *ngIf="cuisine.productCount>0" >
+                    <li>{{cuisine.cuisineName}}</li>
+                </ng-container>
+            </ul>
+        <p>Don't stay hungry.. Order food online!!</p>
+    </div> <!-- end welcome-->
+
+    <!-- Col 2 -->
+    <div class="forminput col-md-6">
+          <h2>Login Form</h2>
+          <!-- Tell Angular that we have created a FormGroup and its FormControls
+               explicitly so that Angular will not create them for us
+               Property Binding: Bind the loginForm property to the form, using the formGroup directive
+          -->
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <div class="form-group">
+                  <label>Username</label>
+                  <input type="text" formControlName="userName"
+                  class="form-control"
+                  [ngClass]="{'is-invalid':isSubmitted && getFormControls['userName'].errors}"/> <!--apply the dynamic CSS to the input field
+                                                                                        apply error class to the input field if any errors are present-->
+                  <!-- Define validation messages -->
+                  <div *ngIf="isSubmitted && getFormControls['userName'].errors" class="invalid-feedback">
+                      <div *ngIf="getFormControls['userName'].errors['required']">
+                          Username cannot be Empty
+                      </div>
+                  </div>
+              </div> <!-- username form group-->
+
+              <div class="form-group">
+                  <label>Password</label>
+                  <input type="password"
+                  formControlName="password"
+                  class="form-control"
+                  [ngClass]="{'is-invalid':isSubmitted && getFormControls['password'].errors}"/><!--apply the dynamic CSS to the input field
+                                                                                      apply error class to the input field if any errors are present-->
+                  <!-- Define validation messages -->
+                  <div *ngIf="isSubmitted && getFormControls['password'].errors" class="invalid-feedback">
+                      <div *ngIf="getFormControls['password'].errors['required']">
+                          Password cannot be Empty
+                      </div>
+                      <div *ngIf="getFormControls['password'].errors['minlength']">
+                          Password must be at least 6 characters
+                      </div>
+                  </div>
+              </div> <!-- password form group-->
+              <br><br>
+              <!--Adding buttons to submit the form or go back to Homepage-->
+              <div class="form-group">
+                  <button class="button btn" type="submit">Login</button>
+                  <button class="button btn" routerLink="/home">Proceed as Guest</button>
+              </div> <!-- button formgroup-->
+          </form>
+      </div> <!-- forminput -->
+  </div> <!-- row-->
+</div> <!-- container-->
+

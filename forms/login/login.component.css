@@ -1,0 +1,31 @@
+h2{
+  color: #f87666; /* #e72929 */
+}
+
+p, form{
+  color: whitesmoke; /* #e72929 */
+}
+
+.welcome{
+  color: #f87666;
+}
+.welcome li{
+  color: whitesmoke;
+}
+
+div button{
+  font-size: 1rem;
+  background-color: #f87666; /* #e72929 */
+  color: white; /* white */
+  border-radius: 10rem;
+  padding: .7rem 1rem;
+  margin: 1rem;
+  opacity: .8;
+  outline: none;
+  text-align: center;
+}
+
+div button:hover{
+  opacity: 1;
+  cursor: pointer;
+}

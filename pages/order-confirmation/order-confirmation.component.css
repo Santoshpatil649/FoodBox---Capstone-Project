@@ -1,0 +1,21 @@
+h2{
+  padding: 1rem;
+  color: rgb(224,85,99); /* #620000 */
+  text-shadow: 1px 1px rgb(98,0,0);
+}
+button{
+  padding: 1rem;
+  color: white; /* white */
+  background: #f87666; /* #e72929 */
+  display: block;
+  width: 99%;
+  border-radius: 1rem;
+  text-align: center;
+  opacity: 0.8;
+  justify-self: center;
+}
+
+button:hover{
+  opacity: 1;
+  cursor: pointer;
+}

@@ -1,0 +1,9 @@
+<div *ngIf="cuisines" [style.justifyContent] = "justifyContent">
+    <div *ngFor="let cuisine of cuisines">
+      <ng-container *ngIf="cuisine.productCount>0" >
+        <a routerLink="/products/cuisine/{{cuisine.cuisineName}}">
+          {{cuisine.cuisineName}}({{cuisine.productCount}})
+        </a>
+      </ng-container>
+    </div>
+</div>

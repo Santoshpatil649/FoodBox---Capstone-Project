@@ -1,0 +1,52 @@
+<header>
+    <div class="container">
+
+      <a href="#" class="logo" routerLink="/home">
+            <img class="img-fluid" src="../../assets/images/fblogoblack1.png" alt="Food Box Logo">
+      </a>
+
+      <nav>
+        <ul>
+            <li *ngIf="!loginService.isAuthenticated && !loginService.isLoggedIn">
+              <a routerLink="/register">Registration</a>
+            </li>
+
+            <li *ngIf="!loginService.isAuthenticated && !loginService.isLoggedIn">
+              <a routerLink="/login">Login</a>
+            </li>
+
+            <div *ngIf="loginService.isAuthenticated && loginService.isLoggedIn">
+             <li class="menu-container">
+                 <a style="color: black;"> {{loginService.loggedInUser.firstName}} </a>
+                  <div class="submenu">
+                    <a routerLink="/profile">Profile</a>
+                    <a routerLink="/orders">Orders</a>
+                  </div> <!-- submenu -->
+              </li><!-- end menu-container -->
+            </div>
+
+            <li *ngIf="loginService.isAuthenticated && loginService.isLoggedIn">
+              <a href="#" routerLink="/cart-page">Cart <span *ngIf="cartQuantity">{{cartQuantity}}</span></a>
+            </li>
+
+            <!-- ADMIN MENU (Protected)-->
+            <div *ngIf="loginService.isAuthenticated && loginService.isAdmin && loginService.isLoggedIn">
+              <li class="menu-container">
+                <a> Admin Menu </a>
+                <div class="submenu">
+                    <a routerLink="/addProduct">Add New Product</a>
+                    <a routerLink="/removeProduct">Remove Product</a>
+                    <a routerLink="/editProducts"> Edit Products</a>
+                    <a routerLink="/editUsers">Edit Users</a>
+                    <!-- <a >Reset Password - Coming Soon</a> --> <!-- Functionality coming soon routerLink="/resetpw"-->
+                </div> <!-- end submenu-->
+              </li>
+            </div>
+            <li *ngIf="loginService.isAuthenticated && loginService.isLoggedIn">
+              <a (click)="loginService.logout()">Logout</a>
+            </li>
+        </ul>
+      </nav>
+
+    </div><!-- end container -->
+</header>

@@ -1,0 +1,69 @@
+.container{
+  display: block;
+  margin: 2rem;
+  margin-top: 2rem;
+  background-color: whitesmoke;
+}
+
+h2{
+  padding: 1rem;
+  color: rgb(224,85,99); /* #620000 */
+  text-shadow: 1px 1px rgb(98,0,0);
+}
+
+div .col-md-4{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e4e4e4;
+
+}
+
+img{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100rem; /* circle shape */
+  object-fit: cover; /* keeping its aspect ratio */
+  outline-style: solid;
+  outline-color: lightgrey;
+}
+
+label{
+  color: grey;
+}
+
+.form-group label{
+  color: lightblue;
+}
+
+input[type="checkbox"] {
+  display: flex;
+  margin: 12px 0;
+}
+
+input[type="checkbox"]:checked{
+  color: #f87666;
+  border: none;
+}
+
+div button{
+  font-size: 1rem;
+  background-color: #f87666; /* #e72929 */
+  color: white; /* white */
+  border-radius: 10rem;
+  padding: .7rem 1rem;
+  margin: 1rem;
+  opacity: .8;
+  outline: none;
+  text-align: center;
+}
+
+div button:clicked{
+  background-color: white;
+}
+
+div button:hover{
+  opacity: 1;
+  cursor: pointer;
+}

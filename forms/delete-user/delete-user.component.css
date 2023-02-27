@@ -1,0 +1,30 @@
+.container{
+    display: block;
+    margin: 2rem;
+    margin-top: 2rem;
+    background-color: whitesmoke;
+    align-items: center;
+  }
+
+  h2{
+    padding: 1rem;
+    color: rgb(224,85,99); /* #620000 */
+    text-shadow: 1px 1px rgb(98,0,0);
+  }
+
+  div button{
+    font-size: 1rem;
+    background-color: #f87666; /* #e72929 */
+    color: white; /* white */
+    border-radius: 10rem;
+    padding: .7rem 1rem;
+    margin: 1rem;
+    opacity: .8;
+    outline: none;
+    text-align: center;
+  }
+
+  div button:hover{
+    opacity: 1;
+    cursor: pointer;
+  }

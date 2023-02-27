@@ -1,0 +1,12 @@
+div{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  div a{
+    background-color: lightgray; /* #6a6969 #f0f0f0 */
+    padding: .3rem .3rem;
+    margin: .15rem .1rem;
+    border-radius: 1rem;
+    color: #f87666; /* #b75f5f rgba(0, 0, 255, 0.687) */
+  }

@@ -1,0 +1,65 @@
+<app-search></app-search>
+<h2>Cuisines</h2>
+<app-cuisines-bar></app-cuisines-bar>
+<h2>Available Items </h2>
+<app-not-found [visible]="!products || products.length <=0"
+                notFoundMessage="Nothing Found in the Kitchen" resetLinkText="Return to Homepage">
+</app-not-found>
+
+<ul>
+    <li *ngFor="let product of products">
+      <!-- Show all the product details as a hyperlink -->
+      <a routerLink="/product/{{product.id}}">
+        <img src={{product.productImageUrl}} class="img-thumbnail" alt={{product.productName}} />
+        <div class="content">
+          <div class="name">
+            {{product.productName}}
+          </div> <!-- name -->
+          <div class="calories">
+            Calories: {{product.calories|number}}
+          </div> <!-- calories -->
+          <div class="stars direction-rtl">
+              <star-rating
+              [rating]="product.rating"
+              [numOfStars]="5"
+              [showHalfStars]="true"
+              [readOnly]="true"
+              >
+              </star-rating>
+          </div> <!-- stars -->
+          <span class="numRev">
+            ({{product.numOfReviews}})
+          </span>
+
+        <div class="product-item-footer">
+          <div class="label">Categories:
+            <div class="categories">
+              <span *ngFor="let tag of product.tags">
+                {{tag}}
+              </span>
+            </div>
+          </div>
+
+        <div class="label">Cusine(s):
+          <div class="cuisines">
+            <span *ngFor="let desiredCuisine of product.cuisines">
+              {{desiredCuisine}}
+            </span>
+          </div></div>
+          <div class="price">
+            <span>
+                 {{product.price|currency:"INR"}} <!-- Currency pipe to format data -->
+             </span>
+          </div> <!-- price -->
+
+
+          <div class="description">
+                    {{product.description | truncate:120}} <!-- Custom pipe to truncate description if it's more than 50 characters -->
+          </div> <!-- description -->
+        </div> <!-- product footer-->
+      </div>  <!--content -->
+    </a> <!-- routerLink-->
+    </li>
+</ul>
+
+

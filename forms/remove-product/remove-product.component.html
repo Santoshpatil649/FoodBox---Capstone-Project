@@ -1,0 +1,49 @@
+<h2>Delete Product</h2>
+<!-- Layout: Based on Horizontal Card Template (3 Equal Columns)
+  Each Product will have its own row
+  col 1: Product Image
+  col 2: Product Name & Description
+  col 3: Delete Button
+-->
+<div class="container">
+  <form [formGroup] = "removeProductForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <!-- Bootstrap Horizontal Card Template -->
+      <div class="card mb-3" style="min-width: 540px;">
+        <div class="row g-0" *ngFor="let product of products">
+
+              <!-- Col 1 -->
+              <div class="col-md-4">
+                <img src="{{product.productImageUrl}}" class="img-fluid">
+              </div> <!-- col-md-4 -->
+
+              <!-- Col 2 -->
+              <div class="col-md-4">
+                <div class="card-body">
+                  <p class="card-text">
+                    <!-- <input type="text" id="pname" name="pname"> -->
+                    {{product.productName}}
+                  </p>
+                  <p class="card-text"><small class="text-muted">{{product.description | truncate:80}}</small></p>
+                </div> <!-- card body -->
+              </div><!-- col-md-4 -->
+
+              <!-- Col 3 -->
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <button class="button btn" id="removeBtn"
+                    (click) = "deleteProduct(product)">Remove Product</button>
+                  </div><!-- end form-group -->
+                </div><!-- col-md-4 -->
+
+        </div><!-- product row -->
+      </div> <!-- card template -->
+
+      <!--Adding buttons to submit the form or go back to Homepage-->
+    <div>
+      <button class="button btn" type="submit" routerLink="/home">Return to Homepage</button>
+    </div> <!-- button -->
+
+    </div> <!-- end row -->
+  </form><!-- end form-->
+</div> <!-- container-->

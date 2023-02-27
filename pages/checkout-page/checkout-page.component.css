@@ -1,0 +1,78 @@
+h2{
+  padding: 1rem;
+  color: rgb(224,85,99); /* #620000 */
+  text-shadow: 1px 1px rgb(98,0,0);
+}
+
+.container{
+  display: block;
+  /*
+  flex-wrap: wrap;
+  align-items: flex-start;
+  */
+  margin: 2rem;
+  margin-top: 2rem;
+  background-color: white;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  flex: 3 0; /* grow shrink */
+  justify-content: space-evenly;
+  border: 1px solid #ffbbbb;
+  border-radius: 1rem;
+  list-style: none;
+  margin: .5rem;
+  padding: 0;
+  opacity: 1;
+}
+
+ul li{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+ul li:last-child{
+  border: none; /* last element will not get any border, as the ul has a bottom border */
+}
+
+li img{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100rem; /* circle shape */
+  object-fit: cover; /* keeping its aspect ratio */
+}
+
+li div{
+  padding: 1rem;
+}
+
+li div:not(:first-child){
+  flex-basis: 18%;
+}
+
+/*pseduo-elements*/
+.cart-details {
+  color: grey;
+}
+
+button{
+  padding: 1rem;
+  color: white; /* white */
+  background: #f87666; /* #e72929 */
+  display: block;
+  width: 99%;
+  border-radius: 1rem;
+  text-align: center;
+  opacity: 0.8;
+  justify-self: center;
+}
+
+button:hover{
+  opacity: 1;
+  cursor: pointer;
+}

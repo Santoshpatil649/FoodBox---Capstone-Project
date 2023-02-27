@@ -1,0 +1,66 @@
+<app-not-found [visible]="!product"
+                notFoundMessage="Product Not Found!" resetLinkText="Back to Homepage">
+</app-not-found>
+
+<div *ngIf="product" class="container">
+  <img [src]="product.productImageUrl" [alt]="product.productName" />
+  <div class="details">
+
+    <div class="header">
+      <span class="name">
+        {{product.productName}}<br>
+      </span>
+    </div> <!-- end header -->
+
+    <div class="calories">
+      Calories: {{product.calories|number}}
+    </div>
+
+    <div class="stars direction-rtl">
+
+      <star-rating
+      [rating]="product.rating"
+      [numOfStars]="5"
+      [showHalfStars]="true"
+      [readOnly]="true"
+      >
+      </star-rating>
+    </div> <!-- end stars -->
+    <span class="numRev">
+        ({{product.numOfReviews}})
+    </span>
+
+    <div class="label">Categories:
+      <div class="categories">
+        <a *ngFor="let tag of product.tags" routerLink="/products/tag/{{tag}}">
+          {{tag}}
+        </a>
+      </div> <!-- end categories -->
+    </div> <!-- end Categories label-->
+
+    <div class="label">Cusine(s):
+    <div class="cuisines">
+      <a *ngFor="let desiredCuisine of product.cuisines" routerLink="/products/cuisine/{{desiredCuisine}}">
+       {{desiredCuisine}}
+      </a>
+    </div> <!-- end cuisines -->
+    </div> <!-- end Cusine label-->
+
+    <div class="price">
+      <span>
+           {{product.price|currency:'INR'}} <!-- Currency pipe to format data -->
+       </span>
+    </div>
+
+
+    <div class="description">
+      <h3>Product Description</h3>
+      {{product.description}}
+    </div> <!-- end description -->
+
+    <br>
+    <button (click) = "addToCart()">Add To Cart</button><br>
+    <button routerLink = "/home">Continue Shopping</button>
+
+  </div> <!-- end details -->
+</div> <!-- end container -->

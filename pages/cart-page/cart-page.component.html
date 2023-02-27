@@ -1,0 +1,53 @@
+<h2>Shopping Cart</h2>
+<app-not-found [visible]="!cart || cart.items.length <= 0"
+              notFoundMessage="Cart Page Is Empty!"
+              resetLinkText="Go To Homepage">
+</app-not-found>
+
+<div *ngIf = "cart && cart.items.length>0" class="container">
+  <!-- Column 1: Item List -->
+  <ul>
+    <li *ngFor="let cartItem of cart.items">
+      <div>
+        <img [src]="cartItem.product.productImageUrl" [alt]="cartItem.product.productName">
+      </div>
+      <div>
+        <a routerLink="/product/{{cartItem.product.id}}">
+          {{cartItem.product.productName}}
+        </a>
+      </div>
+      <div>
+        <!-- create a drop-down box -->
+        <!-- #quanitySelect is the refresh name for the box
+             set its value to the cartItem.quantity
+             set its behavior to call the changeQuantity() method any time the quantity changes -->
+        <select #quanitySelect
+        [value] = "cartItem.quantity"
+        (change)="changeQuanity(cartItem, quanitySelect.value)"> <!-- will call the changeQuanity() from the Cart-Page component -->
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div>
+        {{cartItem.price | currency:"INR"}}
+      </div>
+      <div>
+        <button class="remove-button" (click)="removeFromCart(cartItem)"> <!-- click event will call the removeFromCart() method-->
+            Remove
+        </button>
+      </div>
+    </li>
+  </ul>
+  <!-- Column 2: Checkout -->
+  <div class="checkout">
+    <div>
+        <div class="cart-quantity">{{cart.totalCount}}</div>
+        <div class="total-price">{{cart.totalPrice| currency:"INR"}}</div>
+    </div>
+    <a routerLink="/home">Continue Shopping</a><br>
+    <a routerLink="/checkout">Proceed to Checkout</a>
+  </div> <!-- checkout -->
+</div> <!-- container-->

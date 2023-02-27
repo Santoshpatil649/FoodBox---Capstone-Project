@@ -1,0 +1,19 @@
+<h2>Product List</h2>
+<div class="container">
+  <div class="row" *ngFor="let product of products">
+      <div class="col-md-4">
+        <img [src]="product.productImageUrl">
+      </div>
+      <div class="col-md-4">
+        {{product.productName}}
+      </div>
+      <div class="col-md-4">
+        <a routerLink="/updateProduct/{{product.id}}"><i class="fa fa-edit"></i> </a>
+        <!-- couldn't get the call to removeProduct working in time -->
+        <!--
+        &nbsp;
+        <a routerLink="/removeProduct"><i class="fa fa-trash"></i></a>
+        -->
+      </div>
+  </div> <!-- end row-->
+</div><!-- end container-->

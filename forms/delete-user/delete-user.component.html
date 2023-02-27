@@ -1,0 +1,10 @@
+<h2>Delete User</h2>
+<div class="container" *ngIf="deletedUser">
+    <p>{{deletedUser.firstName}} {{deletedUser.lastName}} ({{deletedUser.userName}}) has been deleted from the database....</p>
+
+    <div>
+        <button class="button btn" routerLink="/editUsers">Return to Edit Users Page</button>
+        <button class="button btn" routerLink="/home">Return to Homepage</button><br><br>
+    </div>
+
+</div><!-- end container-->

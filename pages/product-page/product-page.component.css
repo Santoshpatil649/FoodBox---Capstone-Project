@@ -1,0 +1,150 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 3rem;
+}
+
+.container > *{
+  min-width: 25rem;
+  max-width: 40rem;
+}
+
+img{
+  /*
+  width: 5rem;
+  height: 5rem;
+  */
+  border-radius: 100rem;
+  object-fit: cover;
+  border-radius: 3rem;
+  flex: 1 0;
+  height: 35rem;
+  width: 35rem;
+  margin: 1rem;
+}
+
+.details{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
+  border-radius: 3rem;
+  padding: 2rem;
+  color: black;
+  margin-left: 1rem;
+  background-color: whitesmoke;
+}
+
+.details .header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.details .name{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.details .favorite{
+  position: relative;
+  color: #f87666; /* #e72929 */
+  fill: #f87666;
+  font-size: 2.5rem;
+}
+
+.details .favorite.not{
+  color: gray;
+  fill: gray;
+}
+
+.details .stars{
+  color: #f87666; /* #e72929 */
+  margin-bottom: .2rem;
+  margin-left: 0;
+  padding-left: 0;
+  display: inline-block;
+}
+
+.details .label{
+  font-size: .8rem;
+  color: gray; /* gray */
+}
+
+.details .categories{
+  border-radius: 2rem;
+  background-color: whitesmoke;
+  display: inline-block;
+  font-size: .8rem;
+  margin-right: 0.3rem;
+  margin-top: 0.2rem;
+  padding: 0 0.5rem;
+  color: gray; /* gray */
+}
+
+.categories a{
+  background-color: lightgray; /* #6a6969 #f0f0f0 */
+  padding: .3rem .3rem;
+  margin: .15rem .1rem;
+  border-radius: 1rem;
+  /*font-weight: 50;*/
+  color: #f87666; /* #b75f5f rgba(0, 0, 255, 0.687) */
+}
+
+.details .cuisines{
+  border-radius: 2rem;
+  background-color: whitesmoke;
+  display: inline-block;
+  font-size: .8rem;
+  margin-left: 0.3rem;
+  margin-top: 0.2rem;
+  padding: 0 0.5rem;
+  color: gray; /* gray */
+}
+
+.cuisines a{
+  background-color: lightgray; /* #6a6969 #f0f0f0 */
+  padding: .3rem .3rem;
+  margin: .15rem .1rem;
+  border-radius: 1rem;
+  /*font-weight: 50;*/
+  color: #f87666; /* #b75f5f rgba(0, 0, 255, 0.687) */
+}
+
+.details .price{
+  font-size: 1.8rem;
+  margin: 2rem 2rem 2rem 0;
+  color: green;
+}
+
+.details .price::before{
+  content: "Price: ";
+  color: darkgrey;
+}
+
+.details .calories{
+  font-size: .8rem;
+  color: gray; /* gray */
+}
+
+.details .numRev{
+  color: #f87666;
+  display: inline;
+  margin-left: 0;
+  }
+
+.details button{
+  color: white;
+  background: #f87666; /* #e72929 */
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  outline: none;
+}
+
+.details button:hover{
+  opacity: .9;
+  cursor: pointer;
+}

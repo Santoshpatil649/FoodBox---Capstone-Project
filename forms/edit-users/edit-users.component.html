@@ -1,0 +1,45 @@
+<h2>Edit/Delete Users</h2>
+<!-- Layout: Based on Card Template
+  Each User will have its own card
+  Header: First Name & Last Name
+  Card Body:
+        Role: Role Type
+        Username: Username
+        Email: Email
+        Phone Number: Phone Number
+        Edit Button Delete Button Reset Password Link
+-->
+<div class="container">
+
+        <div class="row">
+            <div class="card rounded" style="width: 20rem;" *ngFor="let user of users">
+                    <div class="card-header rounded"> <!-- admin users will have a border-dark-->
+                        <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Role: {{user.roleType}}</h6>
+                    </div> <!-- end card-header-->
+                    <div class="card-body">
+                        <p class="card-text">Username: {{user.userName}}</p>
+                        <p class="card-text">Email: {{user.email}}</p>
+                        <p class="card-text">Phone Number: {{user.phoneNumber | phoneNumberFormat}}</p>
+                        <div>
+                            <!-- <button class="btn btn-link">Edit User</button> -->
+                            <a routerLink="/edit/{{user.id}}"><i class="fa fa-edit"></i></a>
+                            &nbsp;
+                            <!-- <button class="btn btn-link" (click)="deleteUser(user)">Delete User</button> -->
+                            <a routerLink="/delete/{{user.id}}"><i class="fa fa-trash"></i></a>
+                            &nbsp;
+                            <a routerLink="/resetpw/{{user.id}}">Reset Password</a>
+                            <!-- <button class="btn btn-link" (click)="resetPassword(user)">Reset Password</button> -->
+                        </div>
+                    </div> <!-- end card-body -->
+                    <!--
+                        <app-reset-password [currentUser]="user"></app-reset-password>
+                        -->
+                    <!-- this form works because I was able to pass the component between parent and child -->
+            </div> <!-- end card -->
+        </div><!-- end row -->
+        <!--Adding buttons to go back to Homepage-->
+        <div class="form-group" align="center">
+            <button class="button btn" routerLink="/home">Go Back to Homepage</button>
+        </div> <!-- end div-->
+</div> <!-- end container-->
