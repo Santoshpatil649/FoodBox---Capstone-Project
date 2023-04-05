@@ -92,3 +92,44 @@ Apply filters and sort results based on different cuisines to get the best deals
 Add all the selected food items to a cart and customize the purchase at the end
 Perform a seamless payment process
 Get an order summary details page once the payment is complete
+
+ 
+FOODBOX
+
+1.Introduction.
+	FoodBox is an online food delivery web application for ordering food items of different cuisines from a restaurant. FoodBox is a restaurant chain that delivers food items of different cuisines at affordable prices.
+
+2.Modules in the Project.
+•	Registration Page.
+•	Login Page.
+•	User Login.
+•	Admin Login.
+•	Dashboard.
+•	Search Products.
+•	Add Cart/View Cart.
+•	Payment Gateway Page.
+•	Order Summary Confirmation Page
+
+3. Technology Used in the Project.
+a. Front End:
+•	HTML.
+•	CSS3 and Bootstrap4.
+•	TypeScript.
+•	Angular, Angular Material for View.
+b. Back End:
+•	Java (Programming Lanuguage)
+•	Spring Boot (Frame Work)
+•	Apache Tomcat (Web server)
+•	MySQL (Database)
+•	Eclipse (IDE)
+•	Swagger UI (API Documentation)
+b. VS Code: As an IDE to design frontend of the application.  
+c. Git: To connect and push files from the local system to GitHub.
+d. GitHub: To store the application code and track its versions 
+e. Scrum: An efficient agile framework to deliver the product incrementally.
+
+Epic	User Story Id	Feature/Title	User story
+Admin can login, Manage Products, Manage Users, Manage Purchases (Foodbox.com_EPIC_004)	US401	Login to Admin Portal	As a Admin, I want to login to Application, So that I can view and Manage products, Manage Users and Manage Purchases
+	US402	Manage Products	As a Admin I want to Manage Products, So that I can View, Add , Update and Delete list of products.
+	US403	Manage Users	As a Admin I want to Manage Users, So that I can View Customers registered and their orders and delete customers.
+
