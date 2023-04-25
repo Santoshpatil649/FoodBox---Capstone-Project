@@ -23,9 +23,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
 
-PROJECT DESCRIPTION:
+**PROJECT DESCRIPTION:
 
-DESCRIPTION:
+DESCRIPTION:**
 
 Create a dynamic and responsive online food delivery web application for ordering food items of different cuisines from a restaurant.
 
@@ -33,7 +33,7 @@ Background of the problem statement:
 Foodbox is a restaurant chain that delivers food items of different cuisines at affordable prices. It was established in 2014 in Bengaluru, India. It had been serving fine all these years, however, the business analysts noticed a decline in sales since 2016. They found out that the online ordering of food items with companies, such as Swiggy and Foodpanda were gaining more profit by eliminating middlemen from the equation. As a result, the team decided to hire a Full Stack developer to develop an online food delivery web application with a rich and user-friendly interface.
 You are hired as the Full Stack Java developer and are asked to develop the web application. The management team has provided you with the requirements and their business model so that you can easily arrange different components of the application.
 
-Features of the application:
+**Features of the application:**
 
 1.Registration
 2.Login
@@ -45,7 +45,7 @@ Features of the application:
 8.Responsive and compatible with different devices
 
 
-Recommended technologies:
+**Recommended technologies:**
 
 Database management: MySQL and Oracle
 Backend logic: Java programming, NodeJS
@@ -54,7 +54,7 @@ Automation and testing technologies: Selenium, Jasmine, and TestNG
 DevOps and production technologies: Git, GitHub, Jenkins, Docker, Kubernetes, and AWS
 
 
-Project development guidelines:
+**Project development guidelines:**
 
 The project will be delivered within four sprints with every sprint delivering a minimal viable product.
 It is mandatory to perform proper sprint planning with user stories to develop all the components of the project.
@@ -69,7 +69,7 @@ The learner should make a rich frontend of the application, which is user- frien
 There will be two portals in the application, namely admin and user portal.
 
 
-ADMIN Portal:
+**ADMIN Portal:**
 The admin portal deals with all the backend data generation and product information.
 
 The admin user should be able to:
@@ -78,7 +78,7 @@ Add or remove different cuisines to or from the application to build a rich prod
 Edit food item details like name, price, cuisine, description, and offers to keep it aligned to the current prices
 Enable or disable the food items
 
-USER Portal:
+**USER Portal:**
 It deals with the user activities. 
 
 The end-user should be able to:
@@ -91,7 +91,7 @@ Perform a seamless payment process
 Get an order summary details page once the payment is complete
 
  
-FOODBOX
+**FOODBOX**
 
 1.Introduction.
 	FoodBox is an online food delivery web application for ordering food items of different cuisines from a restaurant. FoodBox is a restaurant chain that delivers food items of different cuisines at affordable prices.
@@ -124,9 +124,4 @@ b. VS Code: As an IDE to design frontend of the application.
 c. Git: To connect and push files from the local system to GitHub.
 d. GitHub: To store the application code and track its versions 
 e. Scrum: An efficient agile framework to deliver the product incrementally.
-
-Epic	User Story Id	Feature/Title	User story
-Admin can login, Manage Products, Manage Users, Manage Purchases (Foodbox.com_EPIC_004)	US401	Login to Admin Portal	As a Admin, I want to login to Application, So that I can view and Manage products, Manage Users and Manage Purchases
-	US402	Manage Products	As a Admin I want to Manage Products, So that I can View, Add , Update and Delete list of products.
-	US403	Manage Users	As a Admin I want to Manage Users, So that I can View Customers registered and their orders and delete customers.
 
